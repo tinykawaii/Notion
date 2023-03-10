@@ -67,14 +67,6 @@ h1 {
     display: inline-block;
 }
 
-.date {
-    display: block;
-    min-width: 162px;
-    /* padding-right: 30px; */
-    /* border-right: 2px solid #D096A5; */
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2em;
-}
 .greet{
     
     min-width: 162px;
@@ -93,8 +85,7 @@ h1 {
     
     <div class="card">
         <div class="greet" id="greet"></div>
-      <div class="date" id="date"></div>
-      <div class="clock">
+          <div class="clock">
         <div class="time" id="hour"></div>
         <div class="colon">:</div>
         <div class="time" id="min"></div>
@@ -105,13 +96,7 @@ h1 {
 </div>
 
 <script>
-    function date() {
-var today = new Date();
-document.getElementById('date').innerHTML = today.toDateString();
-}
-
-
-function clock() {
+ function clock() {
 var today = new Date();
 var hour = zeros(today.getHours());
 var minutes = zeros(today.getMinutes());
@@ -147,7 +132,6 @@ return num;
 }
 
 function dateTime() {
-date();
 clock();
 setTimeout(dateTime, 500);
 }
