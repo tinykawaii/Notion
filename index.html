@@ -110,17 +110,7 @@ h1 {
 var today = new Date().toLocaleDateString()
 document.getElementById('date').innerHTML = today.toLocaleDateString();
 }
-function join(t, a, s) {
-   function format(m) {
-      let f = new Intl.DateTimeFormat('en', m);
-      return f.format(t);
-   }
-   return a.map(format).join(s);
-}
 
-let a = [{day: 'numeric'}, {month: 'short'}, {year: 'numeric'}];
-let s = join(new Date, a, '.');
-console.log(s);
 
 function clock() {
 var today = new Date();
