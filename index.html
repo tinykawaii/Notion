@@ -1,3 +1,4 @@
+<!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +71,7 @@ h1 {
     display: block;
     min-width: 162px;
     /* padding-right: 30px; */
-    /* border-right: 4px solid #D096A5; */
+    /* border-right: 2px solid #D096A5; */
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
 }
@@ -114,7 +115,6 @@ function clock() {
 var today = new Date();
 var hour = zeros(today.getHours());
 var minutes = zeros(today.getMinutes());
-var seconds = zeros(today.getSeconds());
 
 hrs = today.getHours();
 if (hrs < 12)
