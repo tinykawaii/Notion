@@ -98,8 +98,7 @@ h1 {
         <div class="time" id="hour"></div>
         <div class="colon">:</div>
         <div class="time" id="min"></div>
-        <div class="colon">:</div>
-        <div class="time" id="sec"></div>
+        
       </div>
     </div>
     
@@ -108,22 +107,16 @@ h1 {
 
 <script>
     function date() {
-var today = new Date();
-document.getElementById('date').innerHTML = today.toDateString();
+var today = new Date().toLocaleDateString()
+document.getElementById('date').innerHTML = today.toLocaleDateString();
 }
 
 
 function clock() {
 var today = new Date();
-var hour = zeros(twelveHour(today.getHours()));
+var hour = zeros(today.getHours());
 var minutes = zeros(today.getMinutes());
-var seconds = zeros(today.getSeconds());
-if(today.getHours() >=12){
-    seconds+=" pm"
-}
-else{
-    seconds+=" am"
-}
+
 hrs = today.getHours();
 if (hrs < 12)
         greet = 'Guten Morgen  ';
@@ -135,16 +128,7 @@ if (hrs < 12)
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
 document.getElementById('min').innerHTML = minutes;
-document.getElementById('sec').innerHTML = seconds;
 }
-
-function twelveHour(hour) {
-if (hour > 12) {
-    return hour -= 12 
-} else if (hour === 0) {
-    return hour = 12;
-} else {
-    return hour
 }
 }
 // adds zero infront of single digit number
