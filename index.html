@@ -110,33 +110,6 @@ h1 {
 var today = new Date();
 document.getElementById('date').innerHTML = today.toDateString();
 }
-var monthNames = [
-  "Jänner", "Februar", "März", "April", "Mai", "Juni", "Juli",
-  "August", "September", "Oktober", "November", "Dezember"
-];
-var dayOfWeekNames = [
-  "Sonntag", "Montag", "Dienstag",
-  "Mittwoch", "Donnerstag", "Freitag", "Samstag"
-];
-function formatDate(date, patternStr){
-    if (!patternStr) {
-        patternStr = 'M/d/yyyy';
-    }
-    var day = date.getDate(),
-        month = date.getMonth(),
-        year = date.getFullYear(),
-        EEEE = dayOfWeekNames[date.getDay()],
-        dd = twoDigitPad(day),
-        MMMM = monthNames[month],
-        yyyy = year + "",
-    ;
-    return patternStr;
-}
-function twoDigitPad(num) {
-    return num < 10 ? "0" + num : num;
-}
-console.log(formatDate(new Date()));
-console.log(formatDate(new Date(), 'dd. MMMM yyyy')); 
 
 function clock() {
 var today = new Date();
