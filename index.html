@@ -110,7 +110,9 @@ h1 {
 var today = new Date().toLocaleDateString()
 document.getElementById('date').innerHTML = today.toLocaleDateString();
 }
-
+var dateFormat = require('dateformat');
+var now = new Date();
+dateFormat(now, "dddd, mmmm dS, yyyy, h:MM");
 
 function clock() {
 var today = new Date();
