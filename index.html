@@ -126,32 +126,10 @@ function formatDate(date, patternStr){
         month = date.getMonth(),
         year = date.getFullYear(),
         EEEE = dayOfWeekNames[date.getDay()],
-        EEE = EEEE.substr(0, 3),
         dd = twoDigitPad(day),
-        M = month + 1,
-        MM = twoDigitPad(M),
         MMMM = monthNames[month],
-        MMM = MMMM.substr(0, 3),
         yyyy = year + "",
-        yy = yyyy.substr(2, 2)
     ;
-    // checks to see if month name will be used
-    patternStr = patternStr
-       .replace('dd', dd).replace('d', day)
-      .replace('EEEE', EEEE).replace('EEE', EEE)
-      .replace('yyyy', yyyy)
-      .replace('yy', yy)
-  
-    if (patternStr.indexOf('MMM') > -1) {
-        patternStr = patternStr
-          .replace('MMMM', MMMM)
-          .replace('MMM', MMM);
-    }
-    else {
-        patternStr = patternStr
-          .replace('MM', MM)
-          .replace('M', M);
-    }
     return patternStr;
 }
 function twoDigitPad(num) {
