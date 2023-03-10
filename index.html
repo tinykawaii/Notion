@@ -71,7 +71,7 @@ h1 {
     display: block;
     min-width: 162px;
     /* padding-right: 30px; */
-    /* border-right: 2px solid #D096A5; */
+    /* border-right: 4px solid #D096A5; */
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
 }
@@ -98,7 +98,6 @@ h1 {
         <div class="time" id="hour"></div>
         <div class="colon">:</div>
         <div class="time" id="min"></div>
-               
       </div>
     </div>
     
@@ -111,6 +110,7 @@ var today = new Date();
 document.getElementById('date').innerHTML = today.toDateString();
 }
 
+
 function clock() {
 var today = new Date();
 var hour = zeros(today.getHours());
@@ -119,16 +119,15 @@ var minutes = zeros(today.getMinutes());
 }
 hrs = today.getHours();
 if (hrs < 12)
-        greet = 'Guten Morgen ';
+        greet = 'Guten Morgen  ';
     else if (hrs >= 12 && hrs <= 20)
         greet = 'Schön, dich zu sehen! ';
     else if (hrs >= 20 && hrs <= 24)
-        greet = 'Gute Nacht  ';
+        greet = 'Guten Abend  ';
 // console.log(today.toLocaleTimeString());
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
 document.getElementById('min').innerHTML = minutes;
-
 }
 
 function twelveHour(hour) {
